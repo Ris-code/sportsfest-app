@@ -11,6 +11,7 @@ class User(models.Model):
     email = models.CharField(max_length=50)
     hostel_name = models.CharField(max_length=50)
     is_participant = models.BooleanField(default=False)
+    organiser=models.IntegerField(default=0)
 
     class Meta:
         db_table = "users"

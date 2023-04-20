@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'game_app.apps.GameAppConfig',
     'myapp.apps.MyappConfig',
+    'api',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -122,5 +124,14 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+    ],
+}
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
